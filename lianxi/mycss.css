@@ -1,0 +1,98 @@
+*{margin: 0;
+  padding: 0;}
+
+header,main,footer{width:650px;margin-left:50px;}
+.rightpic{float:right;
+          position:fixed;
+          bottom:0px;
+          right: 0;
+          }
+.figure img{
+            display: block;
+            position:relative;
+            width: 450px;
+            border: 1px solid #999;
+            padding: 5px;
+            margin-bottom: 5px;
+            }      
+h1{line-height:2em;
+   margin:30px 0;
+   font-size: 36px;
+   color:#188eee;
+    }
+h2{line-height:1em;
+   margin:20px 0;
+    font-size: 24px;}
+.jianbian{
+          clear:both;height:2px;
+          background: -webkit-linear-gradient(left,  #188eee 0%,#f5f5f5 25%); 
+        }
+ol.article{list-style-position:inside;
+           list-style-type:none;
+           margin-top:20px;}
+li span{font-family:monospace;
+        color: #999;
+        margin-right:10px;
+        }
+.article p{line-height:1.8em;
+           margin:10px 0;
+           font-size: 16px;
+           text-indent: 2em;
+        }
+.ad{color:#999;}
+a:hover {color:#188eee;}
+.pinglun{
+        margin-top:50px;
+        margin-left:0;
+        border-top:3px solid #188eee;
+        padding-top:30px;float: left;
+        }
+.form{
+     float: left;
+     position: relative;
+     top:0;left:0;
+    }
+textarea{
+        resize:none; /*去除谷歌浏览器自带的【右下角的小三角】*/
+        border-radius:5px;  /*矩形的圆角*/
+        border-color: #dbdbdb;
+        color: #999;
+        padding:8px;
+        width:632px;
+        } 
+textarea:hover{box-shadow:0px 0px  5px 5px #ccc;resize:none;}
+.submit{
+        display:block;height: 30px; 
+        width: 80px;
+        border-radius:5px;
+        background-color: #188eee;
+        color: #f5f5f5;
+        margin-bottom: 15px;
+        }
+.submit:hover{background-color:#147de2;}
+.floor{
+       background-color: #f5f5f5;
+       margin:5px;width: 610px;
+       height:55px;float: left;
+       padding:20px;
+       font-size: 12px;
+       border-radius:5px; 
+      }
+.floor:hover{box-shadow:0px 0px  5px 5px #ccc;}
+.floor p{font-size: 14px;padding: 5px 0px;}
+.floor span{color: #666}
+a.jiaohu{
+        float: right;
+        position: relative;
+        right: 10px;bottom: 0px;
+        padding-left:20px;
+        color:#188eee
+        }
+a.jiaohu:hover{cursor:pointer;}   /*手型鼠标*/
+.user{padding-left:15px;}
+.floor a:hover{color:#147de2}
+
+
+
+
+
