@@ -83,7 +83,7 @@ textarea:hover{box-shadow:0px 0px  5px 5px #ccc;resize:none;} /*多行文本框�
        font-size: 12px;
        border-radius:5px; 
       }
-.floor:hover{box-shadow:0px 0px  5px 5px #ccc;}
+.floor:hover{box-shadow:0px 0px  5px 5px #ccc;}   /*鼠标移入时，分别的评论楼层出现阴影*/
 .floor p{font-size: 14px;padding: 5px 0px;}
 .floor span{color: #666}
 a.jiaohu{
@@ -95,7 +95,7 @@ a.jiaohu{
         }
 a.jiaohu:hover{cursor:pointer;}   /*手型鼠标*/
 .user{padding-left:15px;}
-.floor a:hover{color:#147de2}
+.floor a:hover{color:#147de2}   
 
 
 
