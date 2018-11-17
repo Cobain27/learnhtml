@@ -6,7 +6,7 @@
 header,
 main,
 footer{
-        width:650px;
+        width:650px; 
         margin-left:50px;   /*设置整个body的宽度和左侧padding*/
 }  
 .rightpic{
@@ -73,27 +73,26 @@ a:hover {color:#188eee;}  /*为文章之中，打广告的连接，设置hover�
         border-radius:5px;  /*矩形的圆角*/
         border-color: #dbdbdb;
         color: #999;
-        padding:8px;
-        width:632px;
+        padding: 8px 0px 0px 14px; /*使用padding来替代宽度，达到页面对齐的效果*/
+        /*width:632px;  多行文本框必须设置宽度来减小宽度，不然会超出650px的body*/
 } 
 .form textarea:hover{box-shadow:0px 0px 5px #ccc;resize:none;} /*多行文本框的的hover*/
 .submit{ /*提交按钮的位置和盒模型*/
         display:block;
-        height: 30px; 
-        width: 80px;
+        /*height: 30px; width: 80px; 同样，去掉宽度和高度*/
         border-radius:5px;
         background-color: #188eee;
         color: #f5f5f5;
         margin-bottom: 15px;
+        padding:4px 10px;   /*用padding来代替长和宽*/
 }
 .submit:hover{background-color:#147de2;}  /*提交按钮鼠标移入时的bg*/
 .floor{  /*一个评论楼层，包含评论内容和用户名、日期。以及【回复】【点赞】两个按钮*/
        background-color: #f5f5f5;
        margin:10px 0;
-       width: 610px;
-       height:55px;
+       /*width: 610px;height:55px;  同样，去掉宽度和高度*/
        /*float: left; 删除多余代码*/
-       padding:20px;
+       padding:7px 10px;   /*用padding来代替长和宽*/
        font-size: 12px;
        border-radius:5px; 
 }
