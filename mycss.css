@@ -1,13 +1,12 @@
-*{margin: 0;
-  padding: 0;}
+*{margin: 0;padding: 0;}  /*取消浏览器自带的格式*/
 
-header,main,footer{width:650px;margin-left:50px;}
-.rightpic{float:right;
+header,main,footer{width:650px;margin-left:50px;}  /*设置整个body的宽度和左侧padding*/
+.rightpic{float:right;      /*设置不属于body的，固定在屏幕右侧的图片*/
           position:fixed;
           bottom:0px;
           right: 0;
           }
-.figure img{
+.figure img{  /*引用的图片太大，必须设置文中图片的宽度来调整图片为合适大小。另外，给图片加上边框等*/
             display: block;
             position:relative;
             width: 450px;
@@ -15,44 +14,49 @@ header,main,footer{width:650px;margin-left:50px;}
             padding: 5px;
             margin-bottom: 5px;
             }      
-h1{line-height:2em;
+h1{ /*文章的唯一主标题*/
+   line-height:2em;   
    margin:30px 0;
    font-size: 36px;
    color:#188eee;
     }
-h2{line-height:1em;
+h2{ /*各文章小结的副标题*/
+   line-height:1em;    
    margin:20px 0;
-    font-size: 24px;}
-.jianbian{
+   font-size: 24px;}
+.jianbian{  /*副标题下面的渐变分割线，使用渐变背景来设置，不使用图片*/
           clear:both;height:2px;
           background: -webkit-linear-gradient(left,  #188eee 0%,#f5f5f5 25%); 
         }
-ol.article{list-style-position:inside;
+ol.article{  /*列表样式*/
+        list-style-position:inside;    
            list-style-type:none;
            margin-top:20px;}
-li span{font-family:monospace;
+li span{ /*手动设置列表的序列号1234*/
+        font-family:monospace;           
         color: #999;
         margin-right:10px;
         }
-.article p{line-height:1.8em;
-           margin:10px 0;
-           font-size: 16px;
-           text-indent: 2em;
+.article p{ /*为文章内容设置字体等*/
+        line-height:1.8em;             
+        margin:10px 0;
+        font-size: 16px;
+        text-indent: 2em;
         }
-.ad{color:#999;}
-a:hover {color:#188eee;}
-.pinglun{
+.ad{color:#999;}  /*为文章之中，打广告的一行文字，设置颜色*/
+a:hover {color:#188eee;}  /*为文章之中，打广告的连接，设置hover鼠标移入时颜色*/
+.pinglun{   /*将评论部分，强行用footer包裹，设置盒模式部分*/
         margin-top:50px;
         margin-left:0;
         border-top:3px solid #188eee;
         padding-top:30px;float: left;
         }
-.form{
+.form{ /*表格包含多行文本框+提交按钮。设置位置。*/
      float: left;
      position: relative;
      top:0;left:0;
     }
-textarea{
+textarea{  /*多行文本框。设置位置。*/
         resize:none; /*去除谷歌浏览器自带的【右下角的小三角】*/
         border-radius:5px;  /*矩形的圆角*/
         border-color: #dbdbdb;
@@ -60,17 +64,18 @@ textarea{
         padding:8px;
         width:632px;
         } 
-textarea:hover{box-shadow:0px 0px  5px 5px #ccc;resize:none;}
-.submit{
-        display:block;height: 30px; 
+textarea:hover{box-shadow:0px 0px  5px 5px #ccc;resize:none;} /*多行文本框的的hover*/
+.submit{ /*提交按钮的位置和盒模型*/
+        display:block;
+        height: 30px; 
         width: 80px;
         border-radius:5px;
         background-color: #188eee;
         color: #f5f5f5;
         margin-bottom: 15px;
         }
-.submit:hover{background-color:#147de2;}
-.floor{
+.submit:hover{background-color:#147de2;}  /*提交按钮的位置和盒模型*/
+.floor{  /*一个评论楼层，包含评论内容和用户名、日期。以及【回复】【点赞】两个按钮*/
        background-color: #f5f5f5;
        margin:5px;width: 610px;
        height:55px;float: left;
