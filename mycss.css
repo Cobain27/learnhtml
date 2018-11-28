@@ -1,116 +1,184 @@
 * {
-   margin: 0;
-   padding: 0;
-}  /*取消浏览器自带的格式*/
+  /* FIXME:下面的注释都按照这种重新修理 */
+  /* 取消浏览器自带的格式 */
+  margin: 0;
+  padding: 0;
+}
 
 header,
 main,
-footer{
-        width:650px; 
-        margin-left:50px;   /*设置整个body的宽度和左侧padding*/
-}  
-.rightpic{
-        position:fixed;   /*设置不属于body的，固定在屏幕右侧的图片*/
-        bottom:0px;
-        right: 0;
-        position:-650px 0; /*float:right;  这里原本的float被去掉了，使用了position:-650px 0;来代替。同样实现了“图片固定在页面右边的效果”*/
+footer {
+  /* 如：下面的注释写到这里，而且写错了，因该是左侧的外边距，margin是外边距，padding是内边距，不能搞混！ */
+  width: 650px;
+  margin-left: 50px; /*设置整个body的宽度和左侧padding*/
 }
-.figure img{  
-        display: block;  /*position:relative; 删除了*/
-        width: 650px;   /*图片太大，必须设置图片的宽度来调整。另外，给图片加上边框等*/
-        border: 1px solid #999;
-        padding: 5px;
-        margin-bottom: 5px;
-}      
-.onlytitle h1{ /*文章的唯一主标题*/
-   line-height:2; 
-   margin:30px 0;
-   font-size: 34px;
-   color:#188eee;
+.rightpic {
+  /* 设置不属于body的，固定在屏幕右侧的图片 */
+  position: fixed;
+  bottom: 0px;
+  right: 0;
+  /*   TODO:原本就是根本不需要float的，需要在这里补充回答你对float的理解，以及，上面positon，这里又设置一遍
+     打开控制台，会看到什么？
+          1.你会发现你下面的设置是不生效的
+          2.请写出postion这个属性可以填哪些值，你下面的-650px 0是无效值 */
+  position: -650px 0; /*float:right;  这里原本的float被去掉了，使用了position:-650px 0;来代替。同样实现了“图片固定在页面右边的效果”*/
 }
-.section h2{    /*各文章小结的副标题*/
-  margin:20px 0;     
+.figure img {
+  /* TODO: 请问为什么在这里可以删除positon，请回答删除后它现在的值是什么*/
+  display: block; /*position:relative; 删除了*/
+  /* TODO: 宽度不可以设置具体的数值，请使用rem单位来完成这里，包括下面的字体大小也是一样 */
+  width: 650px; /*图片太大，必须设置图片的宽度来调整。另外，给图片加上边框等*/
+  border: 1px solid #999;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+/* FIXME:英文不和谐，既然是主标题那就是main_title，如果你这篇文章只有一个title，那就title就好了 */
+.onlytitle h1 {
+  /* TODO:行高要统一，且你下面也重复了，写在你的body元素里面就好了 */
+  /*文章的唯一主标题*/
+  line-height: 2;
+  margin: 30px 0;
+  font-size: 34px;
+  color: #188eee;
+}
+
+/* 这种地方就要这样写注释：各文章小结的副标题 */
+.section h2 {
+  margin: 20px 0;
   font-size: 24px;
-  line-height: 2;   /*加上下一行为抄袭部分 嘻嘻，作用：使用背景渐变来为副标题设置分割线*/
-  background: linear-gradient(to right,#188eee,#188eee 15%,#999 16%,#999 100%) no-repeat bottom/100% 1px; /*抄袭部分 嘻嘻*/
+  line-height: 2; /*加上下一行为抄袭部分 嘻嘻，作用：使用背景渐变来为副标题设置分割线*/
+  background: linear-gradient(to right,#188eee,#188eee 15%,#999 16%,#999 100%)no-repeat bottom/100% 1px; /*抄袭部分 嘻嘻*/
 }
 /*.jianbian{  副标题下面的渐变分割线，使用渐变背景来设置，不使用图片
           clear:both;height:2px;
           background: -webkit-linear-gradient(left,  #188eee 0%,#f5f5f5 25%); 
-        } 自己原来的分割线是使用div做的，不好*/  
-ol.article{  /*列表样式*/
-        list-style-position:inside;    
-           list-style-type:none;
-           margin-top:20px;
-}
-li span{ /*手动设置列表的序列号1234*/
-        font-family:monospace;           
-        color: #999;
-        margin-right:10px;
-}
-.article p{ /*为文章内容设置字体等*/
-        line-height:1.8em;             
-        margin:10px 0;
-        font-size: 16px;
-        text-indent: 2em;
-}
-.ad{color:#999;}  /*为文章之中，打广告的一行文字，设置颜色*/
-a:hover {color:#188eee;}  /*为文章之中，打广告的连接，设置hover鼠标移入时颜色*/
-.pinglun{   
-        margin-top:50px;  /*将评论部分，强行用footer包裹，设置盒模式部分*/
-        margin-left:0;
-        border-top:3px solid #188eee;
-        padding-top:30px;float: left;
-}
-.form{ /*表格包含多行文本框+提交按钮。设置位置。*/
-     /*float: left;  同样，原本的float被去掉了*/
-     position: relative;
-     /*position:-650px 0;  替代float的position*/
-     top:0;left:0;
-}
-.form textarea{  /*多行文本框。设置位置。*/
-        resize:none; /*去除谷歌浏览器自带的【右下角的小三角】*/
-        border-radius:5px;  /*矩形的圆角*/
-        border-color: #dbdbdb;
-        color: #999;
-        padding: 8px 0px 0px 14px; /*使用padding来替代宽度，达到页面对齐的效果*/
-        /*width:632px;  多行文本框必须设置宽度来减小宽度，不然会超出650px的body*/
-} 
-.form textarea:hover{box-shadow:0px 0px 5px #ccc;resize:none;} /*多行文本框的的hover*/
-.submit{ /*提交按钮的位置和盒模型*/
-        display:block;
-        /*height: 30px; width: 80px; 同样，去掉宽度和高度*/
-        border-radius:5px;
-        background-color: #188eee;
-        color: #f5f5f5;
-        margin-bottom: 15px;
-        padding:4px 10px;   /*用padding来代替长和宽*/
-}
-.submit:hover{background-color:#147de2;}  /*提交按钮鼠标移入时的bg*/
-.floor{  /*一个评论楼层，包含评论内容和用户名、日期。以及【回复】【点赞】两个按钮*/
-       background-color: #f5f5f5;
-       margin:10px 0;
-       /*width: 610px;height:55px;  同样，去掉宽度和高度*/
-       /*float: left; 删除多余代码*/
-       padding:7px 10px;   /*用padding来代替长和宽*/
-       font-size: 12px;
-       border-radius:5px; 
-}
-.floor:hover{box-shadow:0px 0px 5px #ccc;}   /*鼠标移入时，每一个评论楼层，分别出现阴影*/
-.floor p{font-size: 14px;padding: 5px 0px;}
-.floor span{color: #666}
-.jiaohu{   
-        /*float: right;  将浮动去除，本段样式设置“点赞”和“回复”两个按钮的位置*/
-        position: relative;
-        right: -500px;bottom: 3px; /*同样，使用位置来消除浮动*/
-        padding-left:20px; /*保持两个按钮（行内元素）之间的间隙*/
-        color:#188eee
-}
-.jiaohu:hover{cursor:pointer;}   /*手型鼠标*/
-.user{padding-left:15px;}
-.floor a:hover{color:#147de2}   
+        } 自己原来的分割线是使用div做的，不好*/
 
+/* TODO:下面的写的不对，你去掉第一个和第三个，也是一样的效果，所以请回答
+        1.浏览器自带的列表样式是什么
+        2.那么为了取消难看的自带样式，只需要下面哪个就够了？ */
+ol.article {
+  /*列表样式*/
+  list-style-position: inside;
+  list-style-type: none;
+  margin-top: 20px;
+}
+/* FIXME: li后面写个span是没有考虑选择器优化的，所以请给每个span加个class取代这里的span */
+li span {
+  /*手动设置列表的序列号1234*/
+  font-family: monospace;
+  color: #999;
+  margin-right: 10px;
+}
+/* FIXME: 行高和字体的修改，不要忘记了 */
+.article p {
+  /*为文章内容设置字体等*/
+  line-height: 1.8em;
+  margin: 10px 0;
+  font-size: 16px;
+  text-indent: 2em;
+}
+.ad {
+  color: #999;
+} /*为文章之中，打广告的一行文字，设置颜色*/
+a:hover {
+  color: #188eee;
+} /*为文章之中，打广告的连接，设置hover鼠标移入时颜色*/
 
+/* FIXME:评论的英文是review，日文是レビュー */
+.pinglun {
+  margin-top: 50px; /*将评论部分，强行用footer包裹，设置盒模式部分*/
+  margin-left: 0;
+  border-top: 3px solid #188eee;
+  padding-top: 30px;
+  float: left;
+}
 
+/* FIXME:这里也必须写全，是: .pinglun .form
+                         意思是评论下面的form,而不是哪里form,这样阅读起css代码也会变得简单
+                         其他的部分也需要你这么改，使得整个css组织性良好，易于阅读和维护 */
+.form {
+  /*表格包含多行文本框+提交按钮。设置位置。*/
+  /*float: left;  同样，原本的float被去掉了*/
+  position: relative;
+  /*position:-650px 0;  替代float的position*/
+  top: 0;
+  left: 0;
+}
+.form textarea {
+  /*多行文本框。设置位置。*/
+  resize: none; /*去除谷歌浏览器自带的【右下角的小三角】*/
+  border-radius: 5px; /*矩形的圆角*/
+  border-color: #dbdbdb;
+  color: #999;
+  padding: 8px 0px 0px 14px; /*使用padding来替代宽度，达到页面对齐的效果*/
+  /*width:632px;  多行文本框必须设置宽度来减小宽度，不然会超出650px的body*/
+}
+.form textarea:hover {
+  box-shadow: 0px 0px 5px #ccc;
+  resize: none;
+} /*多行文本框的的hover*/
+.submit {
+  /*提交按钮的位置和盒模型*/
+  /* FIXME:你有没有发现你的按钮点完一下会出现一个蓝色外边框？
+        补上这一行就可以了：outline:none;
+        并且，不应该是block,否则你审查元素会发现它占了整个一行，是不对的*/
+  display: block;
+  /*height: 30px; width: 80px; 同样，去掉宽度和高度*/
+  border-radius: 5px;
+  background-color: #188eee;
+  color: #f5f5f5;
+  /* FIXME:不可以给按钮单独增加margin-bottom
+        会造成后期代码维护上的困难
+        应该是设置下个元素的margin-top来实现 */
+  margin-bottom: 15px;
+  padding: 4px 10px; /*用padding来代替长和宽*/
+}
+.submit:hover {
+  background-color: #147de2;
+} /*提交按钮鼠标移入时的bg*/
 
+/* FIXME:这里是评论的列表，review_list */
+.floor {
+  /*一个评论楼层，包含评论内容和用户名、日期。以及【回复】【点赞】两个按钮*/
+  background-color: #f5f5f5;
+  margin: 10px 0;
+  /*width: 610px;height:55px;  同样，去掉宽度和高度*/
+  /*float: left; 删除多余代码*/
+  padding: 7px 10px; /*用padding来代替长和宽*/
+  font-size: 12px;
+  border-radius: 5px;
+}
+.floor:hover {
+  box-shadow: 0px 0px 5px #ccc;
+} /*鼠标移入时，每一个评论楼层，分别出现阴影*/
+.floor p {
+  font-size: 14px;
+  padding: 5px 0px;
+}
+.floor span {
+  color: #666;
+}
+/* FIXME:写成review_button会更有意义 */
+.jiaohu {
+  /*float: right;  将浮动去除，本段样式设置“点赞”和“回复”两个按钮的位置*/
+  position: relative;
+  right: -500px;
+  bottom: 3px; /*同样，使用位置来消除浮动*/
+  padding-left: 20px; /*保持两个按钮（行内元素）之间的间隙*/
+  color: #188eee;
+}
+.jiaohu:hover {
+  /* 手型鼠标 */
+  cursor: pointer;
+}
 
+/* FIXME:这里也请写全: .pinglun .floor .user
+         改成我的要求后就应该是: .review .review_list .review_button
+         这样看起来就有语义，后期维护会变得简单 */
+.user {
+  padding-left: 15px;
+}
+.floor a:hover {
+  color: #147de2;
+}
