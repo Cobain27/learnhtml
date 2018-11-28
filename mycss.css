@@ -18,15 +18,15 @@ footer {
   bottom: 0px;
   right: 0;
   /*   TODO:原本就是根本不需要float的，需要在这里补充回答你对float的理解，以及，上面positon，这里又设置一遍
-     打开控制台，会看到什么？
+          打开控制台，会看到什么？
           1.你会发现你下面的设置是不生效的
-          2.请写出postion这个属性可以填哪些值，你下面的-650px 0是无效值 */
+          2.写出postion这个属性可以填哪些值，你下面的-650px 0是无效的 */
   position: -650px 0; /*float:right;  这里原本的float被去掉了，使用了position:-650px 0;来代替。同样实现了“图片固定在页面右边的效果”*/
 }
 .figure img {
-  /* TODO: 请问为什么在这里可以删除positon，请回答删除后它现在的值是什么*/
+  /* TODO: 这里的确不需要再写positon，那就回答一下删除后它现在的值是什么把*/
   display: block; /*position:relative; 删除了*/
-  /* TODO: 宽度不可以设置具体的数值，请使用rem单位来完成这里，包括下面的字体大小也是一样 */
+  /* TODO: 宽度不可以设置具体的数值，使用rem单位来完成这里，包括下面的字体大小也是一样的 */
   width: 650px; /*图片太大，必须设置图片的宽度来调整。另外，给图片加上边框等*/
   border: 1px solid #999;
   padding: 5px;
@@ -54,9 +54,9 @@ footer {
           background: -webkit-linear-gradient(left,  #188eee 0%,#f5f5f5 25%); 
         } 自己原来的分割线是使用div做的，不好*/
 
-/* TODO:下面的写的不对，你去掉第一个和第三个，也是一样的效果，所以请回答
+/* TODO:下面的写的不对，你去掉第一个和第三个，也是一样的效果，所以回答
         1.浏览器自带的列表样式是什么
-        2.那么为了取消难看的自带样式，只需要下面哪个就够了？ */
+        2.那么为了取消难看的自带样式，只需要下面哪个就够惹？ */
 ol.article {
   /*列表样式*/
   list-style-position: inside;
@@ -70,7 +70,7 @@ li span {
   color: #999;
   margin-right: 10px;
 }
-/* FIXME: 行高和字体的修改，不要忘记了 */
+/* FIXME: 行高和字体的修改，不要忘记了厚 */
 .article p {
   /*为文章内容设置字体等*/
   line-height: 1.8em;
