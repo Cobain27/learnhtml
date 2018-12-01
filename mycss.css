@@ -3,7 +3,14 @@
 	margin: 0;
 	padding: 0;
 } 
-body h1 h2{line-height: 2;}
+a {
+	/*去掉浏览器自带的a标签下划线*/
+	text-decoration: none;
+}
+body h1 h2{
+	/*在前面统一设置标题的行高*/
+	line-height: 2;
+}  
 header,
 main,
 footer {
@@ -33,7 +40,10 @@ footer {
 }
 
 /* 各文章小结的副标题（此处注释不写在中括号内了，提前一行写） */
-.section h2 {
+.schedule_part1 h2,
+.article_part2 h2,
+.pic_part3 h2,
+.end_part4 h2 {
 	margin: 20px 0;
 	font-size: 1.5rem;
 	/*下一行 为抄袭部分。 作用：使用背景渐变来为副标题设置分割线*/
@@ -54,14 +64,14 @@ li .number {
 	color: #999;
 	margin-right: 10px;
 }
-.article p {
+.end_part4 .article p {
 	/*为文章内容设置字体等*/
 	line-height: 1.8rem;
 	margin: 10px 0;
 	font-size: 1rem;
 	text-indent: 2rem; /*段落的第一行缩进*/
 }
-.ad {
+.end_part4 .article .ad {
 	/*为文章之中，打广告的一行文字，设置颜色*/
 	color: #999;
 } 
@@ -69,14 +79,14 @@ a:hover {
 	/*为文章之中，打广告的连接，设置hover鼠标移入时颜色*/
 	color: #188eee;
 } 
-.review {
+.review_part5 {
 	margin-top: 50px; /*将评论部分，强行用footer包裹，设置盒模式部分*/
 	margin-left: 0;
 	border-top: 3px solid #188eee;
 	padding-top: 30px;
 	float: left;
 }
-.review .form {
+.review_part5 .form {
 	/*选择器这个注意一下，将父级元素也写上*/
 	/*表格包含多行文本框+提交按钮。设置位置。*/
 	/*float: left;  同样，原本的float被去掉了*/
@@ -85,7 +95,7 @@ a:hover {
 	top: 0;
 	left: 0;
 }
-.review .form textarea {
+.review_part5 .form textarea {
 	/*多行文本框。设置位置。*/
 	resize: none; /*去除谷歌浏览器自带的【右下角的小三角】*/
 	border-radius: 5px; /*矩形的圆角*/
@@ -94,11 +104,11 @@ a:hover {
 	padding: 8px 0px 0px 14px; /*使用padding来替代宽度，达到页面对齐的效果*/
 	/*width:632px;  多行文本框必须设置宽度来减小宽度，不然会超出650px的body*/
 }
-.review .form textarea:hover {
+.review_part5 .form textarea:hover {
 	box-shadow: 0px 0px 5px #ccc;
 	resize: none;
 } /*多行文本框的的hover*/
-.review .form .submit {
+.review_part5 .form .submit {
 	/*提交按钮的位置和盒模型*/
 	/*display: block; 既然用内边距来代替了长和宽，就不需要显示为块来设置长和宽了*/
 	/*height: 30px; width: 80px; 同样，去掉宽度和高度*/
@@ -109,10 +119,10 @@ a:hover {
 	padding: 4px 10px; /*用padding来代替长和宽*/
 	outline:none; /*新增：消除按钮点击时出现的蓝色边框，这种小细节要记住*/
 }
-.review .form .submit:hover {
+.review_part5 .form .submit:hover {
 	background-color: #147de2;
 } /*提交按钮鼠标移入时的bg*/
-.review .floor {
+.review_part5 .floor {
 	/*一个评论楼层，包含评论内容和用户名、日期。以及【回复】【点赞】两个按钮*/
 	background-color: #f5f5f5;
 	margin: 10px 0;
@@ -122,31 +132,31 @@ a:hover {
 	font-size: 0.75rem;
 	border-radius: 5px;
 }
-.review .floor:hover {
+.review_part5 .floor:hover {
 	box-shadow: 0px 0px 5px #ccc;
 } /*鼠标移入时，每一个评论楼层，分别出现阴影*/
-.review .floor p {
+.review_part5 .floor p {
 	font-size: 0.875rem;
 	padding: 5px 0px;
 }
-.review .floor span {
+.review_part5 .floor span {
 	color: #666;
 }
-.review .floor .review_button {
+.review_part5 .floor .review_button {
 	/*float: right;  将浮动去除，本段样式设置“点赞”和“回复”两个按钮的位置*/
 	position: relative;
-	right: -500px;
+	right: -548px;
 	bottom: 3px; /*同样，使用位置来消除浮动*/
-	padding-left: 20px; /*保持两个按钮（行内元素）之间的间隙*/
+	padding-left: 8px; /*保持两个按钮（行内元素）之间的间隙*/
 	color: #188eee;
 }
-.review .floor .review_button:hover {
+.review_part5 .floor .review_button:hover {
 	/*手型鼠标*/
 	cursor: pointer;
 } 
-.review .floor .user {
+.review_part5 .floor .user {
 	padding-left: 15px;
 }
-.review .floor .user a:hover { 
+.review_part5 .floor .user a:hover { 
 	color: #147de2;
 }
