@@ -1,0 +1,226 @@
+body{
+    /*去掉浏览器自带的格式，并统一设置行高。*/
+    margin:0;
+    padding: 0;
+    
+    display: flex;   /*定义布局方式实现响应式布局*/
+    flex-wrap: wrap;  /*定义换行方式：换行，且第一行在上方*/
+} 
+p,a,ul{
+    margin:0;
+    padding-inline-start: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+a{
+    /*去掉连接的下划线*/
+    text-decoration: none;} 
+ul{
+    /*去掉列表的自带样式*/
+    list-style-type: none;}  /**/
+
+.box_01{  
+    /*第一个块盒子，有蓝色背景的那个*/
+    line-height: 2rem;
+    width:37rem;
+    background-color: #2490eb;
+    background-image:url(http://coding.imweb.io/img/project/resume/bg.png); /*设置背景图像*/
+    color: rgb(250, 250, 250);
+    display: -webkit-flex; /* 定义布局方式，解决Safari的兼容问题  */
+    display: flex;   /*定义布局方式*/
+    flex-direction: column;  /*定义轴线是y轴，子元素将竖着摆放*/
+    align-items:center;  /*定义对齐方式是居中对齐，子元素的中心点将沿着y轴竖着摆放*/
+    font-size: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+    /*建立body的弹性布局2-1 */
+    flex: 1 1 auto;  /*值分别是：按比例放大 按比例缩小 自动分配多余空间*/
+}
+
+.box_01 .profile{
+    /*头像。*/
+    width:6.25rem; 
+    height: 6.25rem;
+    border: 1px solid #999;
+    border-radius: 6.25rem; /*圆角使正方形变成了圆形*/
+    background-image:url(images/nickname2.jpg);
+    margin:6.25rem 0 2rem 0;
+    box-shadow: 0px 0px 10px #ccc;
+}
+.box_01 .profile:hover{
+    box-shadow: 0px 0px 50px #ffffff;
+    background-size:120%;
+    background-position: center;
+}    
+
+.box_01 .son1,
+.box_01 .son2{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.box_01 .son2{
+    margin-bottom:1.7rem;
+}
+.box_01 .son3,
+.box_01 .son4,
+.box_01 .son5{
+    /*带图标的三行设置特别对齐方式*/
+    /*align-self:baseline;*/
+    /*padding-left:24rem;*/
+    
+}
+.icon1::before{
+    
+    content: url(images/icon2.png);    /*    不可以加“”   */
+    display: block;
+    background-size:24px 24px; 
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    
+    top: -15px;
+    /*float:left;
+    background-size:24px 24px;   /*妈的这一块怎么回事 网上的方法都不对 写代码写到绝望*/
+    position:relative; 
+    left: 0; 
+    top:0; 
+    background: url('images/icon2.png') no-repeat top left /32px 16px;/*兼容没测*/
+    
+    
+    /*z-index: 2;*/
+    
+    
+}
+
+.box_01 .son4,
+.box_01 .son5{
+    /*/*为了给背景定位，必须设置相对定位*/
+   /*    /*背景定位1*/
+  /*        /*背景定位2*/
+  /*  width:2rem;
+    /*height:2rem;
+    
+}*/
+/*.box_01 .son4 .icon{
+    /*将图标修改为第二个*/
+   /* background:url(images/icon2.png) -48px 0;
+}
+
+/*.box_01 .son5 .icon{*/
+    /*将图标修改为第三个*/
+  /*  background:url(images/icon2.png) -92px 0;
+}*/}
+
+.box_01 .son6{  
+        border: 1px solid #999; /*边框*/
+        border-radius: 5px; /*边框的圆角*/
+        background-color:#228de7;   /*背景色*/
+        margin:40px 0 100px 0;   /*增加下边距，撑起left盒子*/
+        width:380px;       
+        display: -webkit-flex; /* Safari */
+        display: flex;   /*做一个盒子，来排版四个span*/
+        flex-wrap:wrap;
+        padding:5px 0px 5px 20px;
+        }
+.box_01 .son6 .c01{margin-right:100px;}
+.box_01 .son6 .c03{margin-right:50px;}
+/*------------------------------------------第一个盒子到此结束------------------------------------*/
+.box_02{
+    width:37rem; 
+    background-color:#f5f5f5; 
+    padding-right:2rem; /*设置右边距*/
+    padding-top: 2.25rem; 
+    /*建立body的弹性布局2-2 */
+    flex: 1 1 auto;  /*值分别是：按比例放大 按比例缩小 自动分配多余空间*/
+}
+.box_02 h2{
+    /*第二个盒子的两个标题*/
+    text-align:center;
+    color:#1f92ef;
+    background:linear-gradient(to right, #cccccc, #cccccc 40%,#f5f5f5 41%,#f5f5f5 60%,#cccccc 61%, #cccccc 100%) no-repeat bottom/100% 1px;  
+    background-position: 0 0.875rem;   
+}
+.box_02 .experience,.box_02 .skills {
+    /*给个左边距，为时间线腾出位置*/
+    padding-left:50px;
+}
+.box_02 .experience .item::before{
+    /*时间轴-竖线*/
+    background: #999;
+    float:left;   /*不浮动就不会有背景*/
+    position:relative;  /*为了给背景定位，必须设置相对定位*/
+    left: -15px;  /*背景定位1*/
+    top:16px;    /*背景定位2*/
+    width: 2px;
+    height:130px;
+    content: " ";
+}
+.box_02 .experience .time{
+    font-size: 1.05rem;
+}
+.box_02 .experience .company{
+    padding-left: 0.75rem;
+    font-size: 1.05rem;
+}
+.box_02 .experience .item .time::before{
+    /*给时间轴加上原点*/
+    background: #2490eb;
+    float:left;   /*不浮动就不会有背景*/
+    position:relative; /*为了给背景定位，必须设置相对定位*/
+    left: -21px;    /*背景定位1*/
+    top:0.7rem;       /*背景定位2*/
+    width: 10px;
+    height:10px;
+    content: " ";
+    border-radius: 10px;
+}
+.box_02 .experience .item .work{
+    /*工作详细内容说明部分*/
+    color:#999;
+    margin:20px 0; 
+    font-size: 1rem;
+}
+
+.box_02 .skills{
+    /*技能特长部分：上下外边距*/
+    margin: 3.5rem 0;
+}
+.box_02 .skills .skill{
+    line-height: 1rem; 
+}
+}
+.box_02 .skills .level{
+    /*技能等级*/
+    background-color: #228de7;
+    border: 1px solid #999;
+    border-radius: 13px;
+    padding: 0px 7px;
+    color:#999;
+    
+    font-size: 0.8rem;
+    
+}
+.box_02 .skills .skill .box{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.box_02 .skills .skill .box .right{
+    /*技能等级*/
+    border:1px solid #999;
+    border-radius: 15%;
+    color: #999;
+    padding: 4px 10px;
+
+}
+
+.box_02 .skills .skill .bottom{
+    /*技能条*/
+    color:#999;
+    height: 2.5rem;
+    background: linear-gradient(to right, #188eee, #188eee 15%, #999 16%, #999 100%) no-repeat bottom/100% 5px; /*抄袭部分 嘻嘻*/
+    padding:1rem 0 0 0;
+    margin-bottom: 1rem;
+    
+    /*
+    
+}
