@@ -59,48 +59,40 @@ ul{
 .box_01 .son2{
     margin-bottom:1.7rem;
 }
-.box_01 .son3,
-.box_01 .son4,
-.box_01 .son5{
-    /*带图标的三行设置特别对齐方式*/
-    /*align-self:baseline;*/
-    /*padding-left:24rem;*/
-    
+.box_01 .son3 .icon1,.icon2,.icon3{
+    /*第1个图标*/
+    display:inline-block;
+    width: 28px;
+    height: 25px;
+    background: url(images/icon.png) no-repeat top left;
+    position:relative; 
+    left: 0px; 
+    top:6px; 
+    z-index: 2;
 }
-.icon1::before{
+.box_01 .son3 .icon2{
+    /*第2个图标*/
+    background-position-x: -48px;
+}
+.box_01 .son3 .icon3{
+    /*第3个图标*/
+    background-position-x: -96px;
+}
+    
+/*.icon1::before{
     
     content: url(images/icon.png);    /*    不可以加“”   */
-    display: block;
+/*    display: block;
     background-size:24px 24px;    /* 一直的问题就在于这里，给背景设置的宽度无效，我只想要第一个图标，但是整张图的3个图标全部上去了*/
-    width: 24px;
+/*    width: 24px;
     height: 24px;
     position:relative; 
     left: -30px; 
     top:26px; 
     background: url('images/icon.png') no-repeat top left;/*兼容没测*/  
-    /*z-index: 2;*/   
-}
-
-.box_01 .son4,
-.box_01 .son5{
-    /*/*为了给背景定位，必须设置相对定位*/
-   /*    /*背景定位1*/
-  /*        /*背景定位2*/
-  /*  width:2rem;
-    /*height:2rem;
-    
-}*/
-/*.box_01 .son4 .icon{
-    /*将图标修改为第二个*/
-   /* background:url(images/icon2.png) -48px 0;
-}
-
-/*.box_01 .son5 .icon{*/
-    /*将图标修改为第三个*/
-  /*  background:url(images/icon2.png) -92px 0;
-}*/}
-
-.box_01 .son6{  
+/*    z-index: 2;  
+}*/ 
+.box_01 .son4{  
         border: 1px solid #999; /*边框*/
         border-radius: 5px; /*边框的圆角*/
         background-color:#228de7;   /*背景色*/
@@ -111,8 +103,8 @@ ul{
         flex-wrap:wrap;
         padding:5px 0px 5px 20px;
         }
-.box_01 .son6 .c01{margin-right:100px;}
-.box_01 .son6 .c03{margin-right:50px;}
+.box_01 .son4 .c01{margin-right:100px;}
+.box_01 .son4 .c03{margin-right:50px;}
 /*------------------------------------------第一个盒子到此结束------------------------------------*/
 .box_02{
     width:37rem; 
@@ -151,18 +143,36 @@ ul{
     padding-left: 0.75rem;
     font-size: 1.05rem;
 }
-.box_02 .experience .item .time::before{
-    /*给时间轴加上原点*/
-    background: #2490eb;
-    float:left;   /*不浮动就不会有背景*/
-    position:relative; /*为了给背景定位，必须设置相对定位*/
-    left: -21px;    /*背景定位1*/
-    top:0.7rem;       /*背景定位2*/
+.box_02 .experience .item .time .dot{
+    /*给时间轴加上圆点*/
+    display: inline-block;
     width: 10px;
+    height:10px;
+    background: #2490eb;
+    border-radius: 10px;
+    position:relative; 
+    left: -21px; 
+    top:0px; 
+    z-index: 2;
+}
+/*.box_02 .experience .item .time::before{
+    /*给时间轴加上圆点*/
+ /*   background: #2490eb;
+    float:left;   /*不浮动就不会有背景*/
+ /*   position:relative; /*为了给背景定位，必须设置相对定位*/
+ /*   left: -21px;    /*背景定位1*/
+ /*   top:0.7rem;       /*背景定位2*/
+ /*  width: 10px;
     height:10px;
     content: " ";
     border-radius: 10px;
+}   */
+
+.box_02 .experience .item .time .dot:hover{
+    /*给时间轴的小圆点加上阴影*/
+    box-shadow: 0px 0px 10px #2490eb;
 }
+
 .box_02 .experience .item .work{
     /*工作详细内容说明部分*/
     color:#999;
@@ -204,14 +214,47 @@ ul{
 
 }
 
-.box_02 .skills .skill .bottom{
+.box_02 .skills .skill{
+    /*各技能之间的间隔*/
+    margin-top: 2rem;
+}
+.box_02 .skills .skill .describe{
+    /*对技能的描述文字*/
+    color: #999;
+}
+.box_02 .skills .skill .animation{
     /*技能条*/
+    height: 4px;
     color:#999;
-    height: 2.5rem;
-    background: linear-gradient(to right, #188eee, #188eee 15%, #999 16%, #999 100%) no-repeat bottom/100% 5px; /*抄袭部分 嘻嘻*/
-    padding:1rem 0 0 0;
-    margin-bottom: 1rem;
-    
-    /*
-    
+    background:  #999  no-repeat bottom/100% 1px; 
+    margin: 1rem 0;   
+}
+.box_02 .skills .skill .animation1{
+    display: inline-block;
+    height: 4px;
+    width:80%;
+    background:#2490eb;
+    position: relative;
+    top:-10px;
+}
+.box_02 .skills .skill .animation2{
+    display: inline-block;
+    height: 4px;
+    width:20%;
+    background:#2490eb;
+    position: relative;
+    top:-10px;
+}
+.box_02 .skills .skill .animation3{
+    display: inline-block;
+    height: 4px;
+    width:10%;
+    background:#2490eb;
+    position: relative;
+    top:-10px;
+}
+.box_02 .skills .skill .animation1:hover{
+    /*技能条动画，正在研究中*/
+    animation-duration: 3s;
+    animation-name: slidein;
 }
