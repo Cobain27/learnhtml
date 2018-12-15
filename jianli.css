@@ -42,7 +42,7 @@ ul{
     height: 6.25rem;
     border: 1px solid #999;
     border-radius: 6.25rem; /*圆角使正方形变成了圆形*/
-    background-image:url(images/nickname2.jpg);
+    background-image:url(images/nickname.jpg);
     margin:6.25rem 0 2rem 0;
     box-shadow: 0px 0px 10px #ccc;
 }
@@ -69,25 +69,16 @@ ul{
 }
 .icon1::before{
     
-    content: url(images/icon2.png);    /*    不可以加“”   */
+    content: url(images/icon.png);    /*    不可以加“”   */
     display: block;
-    background-size:24px 24px; 
+    background-size:24px 24px;    /* 一直的问题就在于这里，给背景设置的宽度无效，我只想要第一个图标，但是整张图的3个图标全部上去了*/
     width: 24px;
     height: 24px;
-    position: absolute;
-    
-    top: -15px;
-    /*float:left;
-    background-size:24px 24px;   /*妈的这一块怎么回事 网上的方法都不对 写代码写到绝望*/
     position:relative; 
-    left: 0; 
-    top:0; 
-    background: url('images/icon2.png') no-repeat top left /32px 16px;/*兼容没测*/
-    
-    
-    /*z-index: 2;*/
-    
-    
+    left: -30px; 
+    top:26px; 
+    background: url('images/icon.png') no-repeat top left;/*兼容没测*/  
+    /*z-index: 2;*/   
 }
 
 .box_01 .son4,
