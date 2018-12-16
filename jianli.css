@@ -1,3 +1,5 @@
+html{font-size: 14px;}
+
 body{
     /*去掉浏览器自带的格式，并统一设置行高。*/
     margin:0;
@@ -107,17 +109,18 @@ ul{
 .box_01 .son4 .c03{margin-right:50px;}
 /*------------------------------------------第一个盒子到此结束------------------------------------*/
 .box_02{
+   /*建立body的弹性布局2-2 */
+    flex: 1 1 auto;  /*值分别是：按比例放大 按比例缩小 自动分配多余空间*/  
     width:37rem; 
     background-color:#f5f5f5; 
     padding-right:2rem; /*设置右边距*/
-    padding-top: 2.25rem; 
-    /*建立body的弹性布局2-2 */
-    flex: 1 1 auto;  /*值分别是：按比例放大 按比例缩小 自动分配多余空间*/
+    padding-top: 2.25rem;  
 }
 .box_02 h2{
     /*第二个盒子的两个标题*/
     text-align:center;
     color:#1f92ef;
+    font-size: 1.6rem;
     background:linear-gradient(to right, #cccccc, #cccccc 40%,#f5f5f5 41%,#f5f5f5 60%,#cccccc 61%, #cccccc 100%) no-repeat bottom/100% 1px;  
     background-position: 0 0.875rem;   
 }
@@ -133,7 +136,7 @@ ul{
     left: -15px;  /*背景定位1*/
     top:16px;    /*背景定位2*/
     width: 2px;
-    height:130px;
+    height:100px;
     content: " ";
 }
 .box_02 .experience .time{
@@ -155,19 +158,6 @@ ul{
     top:0px; 
     z-index: 2;
 }
-/*.box_02 .experience .item .time::before{
-    /*给时间轴加上圆点*/
- /*   background: #2490eb;
-    float:left;   /*不浮动就不会有背景*/
- /*   position:relative; /*为了给背景定位，必须设置相对定位*/
- /*   left: -21px;    /*背景定位1*/
- /*   top:0.7rem;       /*背景定位2*/
- /*  width: 10px;
-    height:10px;
-    content: " ";
-    border-radius: 10px;
-}   */
-
 .box_02 .experience .item .time .dot:hover{
     /*给时间轴的小圆点加上阴影*/
     box-shadow: 0px 0px 10px #2490eb;
@@ -233,28 +223,79 @@ ul{
     display: inline-block;
     height: 4px;
     width:80%;
-    background:#2490eb;
+    background:linear-gradient(to right, #188eee, #188eee 80%,  #13c4ff 100%) no-repeat;
     position: relative;
-    top:-10px;
+    top:-8px;
 }
 .box_02 .skills .skill .animation2{
     display: inline-block;
     height: 4px;
     width:20%;
-    background:#2490eb;
+    background:linear-gradient(to right, #188eee, #188eee 80%,  #13c4ff 100%) no-repeat;
     position: relative;
-    top:-10px;
+    top:-8px;
 }
 .box_02 .skills .skill .animation3{
     display: inline-block;
     height: 4px;
     width:10%;
-    background:#2490eb;
+    background:linear-gradient(to right, #188eee, #188eee 80%,  #13c4ff 100%) no-repeat;
     position: relative;
-    top:-10px;
+    top:-8px;
 }
-.box_02 .skills .skill .animation1:hover{
-    /*技能条动画，正在研究中*/
-    animation-duration: 3s;
-    animation-name: slidein;
+.box_02 .skills .skill .animation .animation1:hover {
+    /*第一根技能条动画*/
+    animation-duration: 2s; /*设置动画一个周期的时长*/
+    animation-name: key1;  /*指定由@keyframes描述的关键帧名称。*/
+    animation-iteration-count: infinite;/*设属性为infinite,使动画无限重复*/
 }
+
+@keyframes key1{
+    from {
+      margin-right: 100%;
+      width: 0%;
+    }
+  
+    to {
+      margin-right: 0%;
+      width: 80%;
+    }
+}/*第一根技能条动画结束*/
+
+.box_02 .skills .skill .animation .animation2:hover {
+    /*第二根技能条动画*/
+    animation-duration: 2s; /*设置动画一个周期的时长为2秒*/
+    animation-name: key2;  /*指定由@keyframes描述的关键帧名称。*/
+    animation-iteration-count: infinite;/*设属性为infinite,使动画无限重复*/
+}
+
+@keyframes key2{
+    from {
+      margin-right: 100%;
+      width: 0%;
+    }
+  
+    to {
+      margin-right: 0%;
+      width: 20%;
+    }
+}/*第二根技能条动画结束*/
+
+.box_02 .skills .skill .animation .animation3:hover {
+    /*第三根技能条动画*/
+    animation-duration: 2s; /*设置动画一个周期的时长*/
+    animation-name: key3;  /*指定由@keyframes描述的关键帧名称。*/
+    animation-iteration-count: infinite;/*设属性为infinite,使动画无限重复*/
+}
+
+@keyframes key3{
+    from {
+      margin-right: 100%;
+      width: 0%;
+    }
+  
+    to {
+      margin-right: 0%;
+      width: 10%;
+    }
+}/*第三根技能条动画结束*/
