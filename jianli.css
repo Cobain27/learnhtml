@@ -230,7 +230,7 @@ ul{
 .box_02 .skills .skill .animation2{
     display: inline-block;
     height: 4px;
-    width:20%;
+    width:60%;
     background:linear-gradient(to right, #188eee, #188eee 80%,  #13c4ff 100%) no-repeat;
     position: relative;
     top:-8px;
@@ -238,64 +238,25 @@ ul{
 .box_02 .skills .skill .animation3{
     display: inline-block;
     height: 4px;
-    width:10%;
+    width:40%;
     background:linear-gradient(to right, #188eee, #188eee 80%,  #13c4ff 100%) no-repeat;
     position: relative;
     top:-8px;
 }
 .box_02 .skills .skill .animation .animation1:hover {
-    /*第一根技能条动画*/
-    animation-duration: 2s; /*设置动画一个周期的时长*/
-    animation-name: key1;  /*指定由@keyframes描述的关键帧名称。*/
-    animation-iteration-count: infinite;/*设属性为infinite,使动画无限重复*/
+    animation: key 3s ease-out;
 }
 
-@keyframes key1{
+@keyframes key{
     from {
-      margin-right: 100%;
-      width: 0%;
-    }
-  
-    to {
-      margin-right: 0%;
-      width: 80%;
+      width: 30%;
     }
 }/*第一根技能条动画结束*/
 
 .box_02 .skills .skill .animation .animation2:hover {
-    /*第二根技能条动画*/
-    animation-duration: 2s; /*设置动画一个周期的时长为2秒*/
-    animation-name: key2;  /*指定由@keyframes描述的关键帧名称。*/
-    animation-iteration-count: infinite;/*设属性为infinite,使动画无限重复*/
+    animation: key 3s ease-out;
 }
-
-@keyframes key2{
-    from {
-      margin-right: 100%;
-      width: 0%;
-    }
-  
-    to {
-      margin-right: 0%;
-      width: 20%;
-    }
-}/*第二根技能条动画结束*/
 
 .box_02 .skills .skill .animation .animation3:hover {
-    /*第三根技能条动画*/
-    animation-duration: 2s; /*设置动画一个周期的时长*/
-    animation-name: key3;  /*指定由@keyframes描述的关键帧名称。*/
-    animation-iteration-count: infinite;/*设属性为infinite,使动画无限重复*/
+    animation: key 2s ease-out;
 }
-
-@keyframes key3{
-    from {
-      margin-right: 100%;
-      width: 0%;
-    }
-  
-    to {
-      margin-right: 0%;
-      width: 10%;
-    }
-}/*第三根技能条动画结束*/
